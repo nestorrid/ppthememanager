@@ -44,7 +44,8 @@ def update_theme():
     theme = data.get('theme')
 
     if method == "create":
-        result = create_new_theme(theme, path)
+        use_template = data.get('template', None)
+        result = create_new_theme(theme, path, use_template)
         if not result[0]:
             return build_error_response(result[1])
         result = get_csv_filenames_in_path(path)
@@ -207,7 +208,7 @@ def write_data_to_file(rows: list, theme: str, path=None):
     return data
 
 
-def create_new_theme(name, path=None):
+def create_new_theme(name, path=None, use_template=None):
     """
     Just create a new csv file for the theme and add titles at first line
     """
@@ -218,10 +219,12 @@ def create_new_theme(name, path=None):
     rows = []
     rows.append(get_standard_theme_titles())
 
-    for name in get_standard_color_names():
-        row = [name, "#000000"]
-        row.extend(["" for _ in range(2, len(get_standard_theme_titles()))])
-        rows.append(row)
+    if use_template == '1':
+        for name in get_standard_color_names():
+            row = [name, "#000000"]
+            row.extend(
+                ["" for _ in range(2, len(get_standard_theme_titles()))])
+            rows.append(row)
 
     with open(fullpath, 'w') as f:
         csv.writer(f).writerows(rows)

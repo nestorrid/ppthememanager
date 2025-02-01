@@ -1,0 +1,15 @@
+name,main,0,1,2,3,4,5,6,7,8,9,hover,click,disabled
+primary,#FB5757,,,,,,,,,,,#FF7A7A,#E64545,#993737
+secondary,#3F227A,,,,,,,,,,,#4C2992,#351C63,#2C1855
+accent,#00BFFF,,,,,,,,,,,#40CFFF,#00A3E6,#1A759F
+background,#121212,,,,,,,,,,,,,
+text,#FFFFFF,,,,,,,,,,,,,
+subtext,#BFBFBF,,,,,,,,,,,,,
+link,#00BFFF,,,,,,,,,,,,,
+border,#3F227A,,,,,,,,,,,,,
+shadow,#000000,,,,,,,,,,,,,
+divider,#444444,,,,,,,,,,,,,
+success,#00C853,,,,,,,,,,,,,
+info,#29B6F6,,,,,,,,,,,,,
+warning,#FF9100,,,,,,,,,,,,,
+fail,#FF1744,,,,,,,,,,,,,
