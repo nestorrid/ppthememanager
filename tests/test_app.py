@@ -285,3 +285,8 @@ def test_api_apply(client):
         "theme": "default",
         "method": "apply"
     }
+
+
+def test_get_sorted_theme_list():
+    result = get_csv_filenames_in_path()
+    print(result)

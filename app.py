@@ -154,6 +154,9 @@ def get_csv_filenames_in_path(path=None):
         for f in p.iterdir()
         if f.name.endswith('.csv')]
 
+    themes.sort(key=lambda x: os.path.getctime(
+        os.path.join(p, x+'.csv')), reverse=True)
+
     return themes
 
 
